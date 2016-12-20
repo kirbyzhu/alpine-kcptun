@@ -42,17 +42,17 @@ echo "env config start ..."
 env
 echo "env config end ..."
 
-echo "Starting Shadowsocks ..."
-nohup /usr/bin/ssserver -s "${SS_SERVER_ADDR}" -p "${SS_SERVER_PORT}" -k "${SS_PASSWORD}" -m "${SS_METHOD}" -t "${SS_TIMEOUT}" "${SS_FASTOPEN}" >/dev/null 2>&1 &
-sleep 0.3
-echo "ssserver (pid `pidof ssserver`)is running."
-netstat -ntlup | grep ssserver
+# echo "Starting Shadowsocks ..."
+# nohup /usr/bin/ssserver -s "${SS_SERVER_ADDR}" -p "${SS_SERVER_PORT}" -k "${SS_PASSWORD}" -m "${SS_METHOD}" -t "${SS_TIMEOUT}" "${SS_FASTOPEN}" >/dev/null 2>&1 &
+# sleep 0.3
+# echo "ssserver (pid `pidof ssserver`)is running."
+# netstat -ntlup | grep ssserver
 
-echo "Starting Kcptunsvr for Shadowsocks ..."
-nohup /root/kcptun_server -l ":${KCPTUNSVR_LISTENPORT}" -t "${KCPTUNSVR_TARGETADDR}" -key "$KCPTUN_KEY" -mode "$KCPTUN_MODE" "$KCPTUN_NOCOMP" --crypt "$KCPTUN_CRYPT" --sndwnd "$KCPTUN_SNDWND" --rcvwnd "$KCPTUN_RCVWND" >/dev/null 2>&1 &
-sleep 0.3
-echo "kcptunsvr (pid `pidof kcptun_server`)is running."
-netstat -ntlup | grep kcptun_server
+# echo "Starting Kcptunsvr for Shadowsocks ..."
+# nohup /root/kcptun_server -l ":${KCPTUNSVR_LISTENPORT}" -t "${KCPTUNSVR_TARGETADDR}" -key "$KCPTUN_KEY" -mode "$KCPTUN_MODE" "$KCPTUN_NOCOMP" --crypt "$KCPTUN_CRYPT" --sndwnd "$KCPTUN_SNDWND" --rcvwnd "$KCPTUN_RCVWND" >/dev/null 2>&1 &
+# sleep 0.3
+# echo "kcptunsvr (pid `pidof kcptun_server`)is running."
+# netstat -ntlup | grep kcptun_server
 
 echo "Starting Kcptunclient for kcptunsvr ..."
 nohup /root/kcptun_client -r "$KCPTUNCLI_REMOTEADDR" -l "$KCPTUNCLI_LOCALADDR" -key "$KCPTUN_KEY" -mode "$KCPTUN_MODE" "$KCPTUN_NOCOMP" --crypt "$KCPTUN_CRYPT" --sndwnd "$KCPTUN_SNDWND" --rcvwnd "$KCPTUN_RCVWND" >/dev/null 2>&1 &
