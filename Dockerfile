@@ -4,7 +4,7 @@ ENV VERSION 20161202
 RUN apk update && apk add --no-cache tzdata bash git wget \
 	&& wget https://github.com/leession/alpine-kcptun/raw/master/entrypoint.sh -O /root/entrypoint.sh \
 	&& wget https://github.com/xtaci/kcptun/releases/download/v"$VERSION"/kcptun-linux-amd64-"$VERSION".tar.gz \
-		-O kcptun_$version.tar.gz \
+		-O kcptun_"$VERSION".tar.gz \
 		&& tar -zxvf kcptun_"$VERSION".tar.gz \
 		&& cp client_linux_amd64 /root/kcptun_client \
 		&& cp server_linux_amd64 /root/kcptun_server \
