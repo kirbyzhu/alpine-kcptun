@@ -3,12 +3,12 @@
 #set -e
 export RUNENV=${RUNENV:-kcptun-ss}                        							#"RUNENV": kcptunsocks-kcptunss, kcptunsocks, kcptunss, ss
 # ======= SHADOWSOCKS CONFIG ======
-export SS_SERVER_ADDR=${SS_SERVER_ADDR:-"0.0.0.0"}									#"ssserveraddr": "0.0.0.0"
-export SS_SERVER_PORT=${SS_SERVER_PORT:-"25"}										#"ssserverport": "25"
-export SS_PASSWORD=${SS_PASSWORD:-password}											#"ssserverpw": "password"
-export SS_METHOD=${SS_METHOD:-aes-256-cfb}											#"ssservermethod": "aes-256-cfb"
-export SS_TIMEOUT=${SS_TIMEOUT:-300}												#"ssserveraddr": "300"
-export SS_FASTOPEN=${SS_FASTOPEN:-true}												#"ssserveraddr": "true"
+# export SS_SERVER_ADDR=${SS_SERVER_ADDR:-"0.0.0.0"}									#"ssserveraddr": "0.0.0.0"
+# export SS_SERVER_PORT=${SS_SERVER_PORT:-"25"}										#"ssserverport": "25"
+# export SS_PASSWORD=${SS_PASSWORD:-password}											#"ssserverpw": "password"
+# export SS_METHOD=${SS_METHOD:-aes-256-cfb}											#"ssservermethod": "aes-256-cfb"
+# export SS_TIMEOUT=${SS_TIMEOUT:-300}												#"ssserveraddr": "300"
+# export SS_FASTOPEN=${SS_FASTOPEN:-true}												#"ssserveraddr": "true"
 
 # ======= KCPTUNSERVER CONFIG ======
 export KCPTUNSVR_LISTENPORT=${KCPTUNSVR_LISTENPORT:-"443"}							#"kcpsvrlistenport": "443",
