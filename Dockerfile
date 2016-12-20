@@ -3,6 +3,7 @@ MAINTAINER leession <leession@gmail.com>
 ENV VERSION 20161202
 RUN apk update && apk add --no-cache tzdata bash git wget \
 	&& wget https://github.com/leession/alpine-kcptun/raw/master/entrypoint.sh -O /root/entrypoint.sh \
+	&& chmod u+x /root/entrypoint.sh \
 	&& wget https://github.com/xtaci/kcptun/releases/download/v"$VERSION"/kcptun-linux-amd64-"$VERSION".tar.gz \
 		-O kcptun_"$VERSION".tar.gz \
 		&& tar -zxvf kcptun_"$VERSION".tar.gz \
