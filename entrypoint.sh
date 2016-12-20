@@ -55,8 +55,5 @@ echo "env config end ..."
 # netstat -ntlup | grep kcptun_server
 
 echo "Starting Kcptunclient for kcptunsvr ..."
-nohup /root/kcptun_client -r "$KCPTUNCLI_REMOTEADDR" -l "$KCPTUNCLI_LOCALADDR" -key "$KCPTUN_KEY" -mode "$KCPTUN_MODE" "$KCPTUN_NOCOMP" --crypt "$KCPTUN_CRYPT" --sndwnd "$KCPTUN_SNDWND" --rcvwnd "$KCPTUN_RCVWND" >/dev/null 2>&1 &
-sleep 0.3
-echo "kcptunclient (pid `pidof kcptun_client`)is running."
-netstat -ntlup | grep kcptun_client
+/root/kcptun_client -r "$KCPTUNCLI_REMOTEADDR" -l "$KCPTUNCLI_LOCALADDR" -key "$KCPTUN_KEY" -mode "$KCPTUN_MODE" "$KCPTUN_NOCOMP" --crypt "$KCPTUN_CRYPT" --sndwnd "$KCPTUN_SNDWND" --rcvwnd "$KCPTUN_RCVWND"
 
